@@ -1,0 +1,18 @@
+version: '2'
+services:
+  app:
+    image: docker-app
+    expose:
+        - "8080"
+    ports:
+     - "8080:8080"
+    volumes:
+     - ~/Projects/docker-workshop/app:/app
+    links:
+     - mongo
+  mongo:
+    image: mongo
+    expose:
+        - "27017"
+    ports:
+     - "127.0.0.1:27017:27017"
