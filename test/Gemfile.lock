@@ -1,4 +1,5 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     diff-lcs (1.2.5)
     mime-types (2.99.2)
@@ -26,3 +27,6 @@ PLATFORMS
 DEPENDENCIES
   rest-client
   rspec
+
+BUNDLED WITH
+   1.12.5
