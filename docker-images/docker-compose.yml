@@ -1,12 +1,17 @@
 version: '2'
 services:
-  app:
-    image: docker-app
-    ports:
-     - "8080:8080"
-    volumes:
-     - ~/Projects/docker-workshop/app:/app
-    links:
-     - mongo
-  mongo:
-    image: mongo
+    test:
+        image: test
+        volumes:
+            - ~/Projects/docker-workshop/test:/test
+        entrypoint: ./wait-for-it.sh 
+        links:
+            - app
+    app:
+        image: app
+        volumes:
+            - ~/Projects/docker-workshop/app:/app
+        links:
+            - mongo
+    mongo:
+        image: mongo
